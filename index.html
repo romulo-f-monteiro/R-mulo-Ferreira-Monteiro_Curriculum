@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currículo - Rômulo Ferreira Monteiro</title>
+    <!-- Tailwind CSS para estilização moderna e responsiva -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Fonte Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f3f4f6;
+        }
+        
+        /* Títulos das Seções */
+        .section-title {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            color: #1f2937;
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 4px;
+            background-color: #0d9488; /* Cor Teal */
+            bottom: -8px;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        /* Container da Foto de Perfil */
+        .profile-img-container {
+            width: 160px;
+            height: 160px;
+            border: 4px solid white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Linha do Tempo e Bolinhas (Padronizadas) */
+        .timeline-line {
+            border-left: 2px solid #e5e7eb;
+            margin-left: 0.75rem; /* Ajuste fino para alinhar */
+            padding-left: 2rem;
+            padding-bottom: 1rem;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        /* Bolinha Padrão */
+        .timeline-dot {
+            position: absolute;
+            left: -39px; /* Calculado para centralizar na linha */
+            top: 6px;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: white;
+            border: 3px solid #cbd5e1; /* Cinza claro padrão */
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        /* Efeito Hover na Bolinha quando passa o mouse no item */
+        .timeline-item:hover .timeline-dot {
+            border-color: #0d9488; /* Teal */
+            background-color: #0d9488;
+            transform: scale(1.2);
+        }
+
+        /* Efeito Hover nas Seções Principais */
+        .hover-section {
+            transition: all 0.3s ease;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin: -1rem; /* Compensa o padding para não mudar layout */
+            margin-bottom: 2rem; /* Mantém espaçamento inferior */
+        }
+        .hover-section:hover {
+            background-color: white;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            transform: translateX(5px);
+        }
+
+        /* Item de Especialização (Lista) */
+        .spec-item {
+            transition: all 0.3s ease;
+            border-left: 4px solid #e5e7eb; /* Cinza padrão */
+        }
+        .spec-item:hover {
+            border-left-color: #0d9488; /* Teal no hover */
+            background-color: #f0fdfa; /* Fundo levemente verde */
+            transform: translateX(5px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        /* Scrollbar personalizada */
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f1f1; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+        /* Efeito Texto Brilhante */
+        .shiny-text {
+            background: linear-gradient(to right, #ffffff 20%, #2dd4bf 50%, #ffffff 80%);
+            background-size: 200% auto;
+            color: #fff;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 3s linear infinite;
+            font-weight: 600;
+        }
+        @keyframes shine { to { background-position: 200% center; } }
+    </style>
+</head>
+<body class="text-gray-700 antialiased flex flex-col min-h-screen">
+
+    <div class="max-w-6xl mx-auto bg-white shadow-2xl my-0 md:my-10 overflow-hidden flex flex-col md:flex-row md:rounded-lg flex-grow">
+        
+        <!-- SIDEBAR -->
+        <aside class="w-full md:w-1/3 bg-slate-900 text-white p-8 flex flex-col items-center md:items-start text-center md:text-left">
+            
+            <!-- Foto de Perfil -->
+            <div class="mb-8 flex justify-center w-full">
+                <!-- AQUI: INSIRA SUA FOTO DE PERFIL ABAIXO NA TAG IMG (mude o src) -->
+                <div class="profile-img-container rounded-full overflow-hidden bg-gray-300 relative">
+                    <img src="https://via.placeholder.com/160?text=Foto+Perfil" alt="Rômulo Ferreira Monteiro" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <!-- Nome e Título -->
+            <h1 class="text-2xl font-bold mb-2 shiny-text">Rômulo Ferreira Monteiro</h1>
+            <p class="shiny-text text-sm leading-relaxed mb-8">
+                Nutricionista, Profissional de educação física, pesquisador e programador por hobby
+            </p>
+
+            <!-- Contato -->
+            <div class="w-full space-y-4 text-sm md:text-sm">
+                <div class="flex items-center justify-center md:justify-start gap-3">
+                    <i class="fas fa-map-marker-alt text-teal-400 w-5"></i>
+                    <span>Rua dos Ilhéus, Centro, Florianópolis</span>
+                </div>
+                
+                <div class="flex items-center justify-center md:justify-start gap-3">
+                    <i class="fab fa-whatsapp text-teal-400 w-5"></i>
+                    <a href="https://wa.me/5548984724444" target="_blank" class="hover:text-teal-300 transition">(48) 98472-4444</a>
+                </div>
+
+                <div class="flex items-center justify-center md:justify-start gap-3">
+                    <i class="fas fa-envelope text-teal-400 w-5"></i>
+                    <a href="mailto:nutriromulomonteiro@gmail.com" class="hover:text-teal-300 transition break-all">nutriromulomonteiro@gmail.com</a>
+                </div>
+                
+                <div class="flex items-center justify-center md:justify-start gap-3">
+                    <i class="fab fa-instagram text-teal-400 w-5"></i>
+                    <a href="https://www.instagram.com/romulof.monteiro/" target="_blank" class="hover:text-teal-300 transition">@romulof.monteiro</a>
+                </div>
+                <div class="flex items-center justify-center md:justify-start gap-3">
+                    <i class="fab fa-youtube text-teal-400 w-5"></i>
+                    <a href="https://www.youtube.com/@romulomonteiro-g3h" target="_blank" class="hover:text-teal-300 transition">Canal YouTube</a>
+                </div>
+                <div class="flex items-center justify-center md:justify-start gap-3">
+                    <i class="fas fa-file-alt text-teal-400 w-5"></i>
+                    <a href="https://lattes.cnpq.br/3085843825793410" target="_blank" class="hover:text-teal-300 transition break-all">Currículo Lattes</a>
+                </div>
+            </div>
+
+            <div class="w-full border-t border-slate-700 my-8"></div>
+
+            <!-- Skills -->
+            <div class="w-full">
+                <h3 class="text-lg font-bold mb-4 text-white uppercase tracking-wider">Skills</h3>
+                <div class="flex flex-col gap-2 items-center md:items-start text-sm text-gray-300">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check text-teal-500 text-xs"></i> Comunicação interpessoal
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check text-teal-500 text-xs"></i> Programador de app/site (Saúde)
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check text-teal-500 text-xs"></i> Pesquisa científica
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check text-teal-500 text-xs"></i> Análise estatística
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-check text-teal-500 text-xs"></i> Bibliometria e cientometria
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="w-full md:w-2/3 p-8 md:p-12 bg-[#f9fafb]">
+
+            <!-- Sobre -->
+            <section class="hover-section mb-8">
+                <h2 class="section-title">Perfil Profissional</h2>
+                <p class="leading-relaxed text-gray-600 text-justify">
+                    Profissional dedicado à pesquisa científica, nutrição, atividade física e ao desenvolvimento tecnológico. Experiência na administração pública em saúde e na prática clínica, com atuação em hospital, posto de saúde, Academia da Saúde e consultório especializado em emagrecimento, com foco no cuidado e manejo de doenças crônicas não transmissíveis, aliando rigor acadêmico, inovação e prática clínica.
+                </p>
+            </section>
+
+            <!-- 1. Formação e Especializações -->
+            <section class="hover-section mb-8">
+                <h2 class="section-title">Formação e Especializações</h2>
+                <div class="timeline-line">
+                    
+                    <!-- 1º Licenciatura -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4 class="font-bold text-gray-800 text-lg">Licenciatura em Educação Física</h4>
+                        <p class="text-sm text-gray-600">Faculdade Única de Ipatinga | Término em 2024</p>
+                    </div>
+
+                    <!-- 2º Bacharelado -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4 class="font-bold text-gray-800 text-lg">Bacharelado em Nutrição</h4>
+                        <p class="text-sm text-gray-600">Universidade Nilton Lins | Término em 2020</p>
+                    </div>
+
+                    <!-- 3º Mestrado -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot" style="border-color: #0d9488;"></div> <!-- Destaque fixo para mestrado -->
+                        <h4 class="font-bold text-gray-800 text-lg">Mestrado em Educação Física</h4>
+                        <p class="text-sm text-teal-600 font-semibold">Universidade Federal de Santa Catarina (UFSC) | 2025 - Atual</p>
+                        <p class="text-sm text-gray-500 mt-1">Área: Exercício Físico e Doenças Crônicas Não Transmissíveis.</p>
+                    </div>
+
+                    <!-- 4º Especializações -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h4 class="font-bold text-gray-800 text-lg mb-4">Especializações</h4>
+                        <ul class="space-y-3">
+                            <li class="bg-white p-3 rounded spec-item">
+                                <span class="font-semibold block text-gray-700">Docência em Ciências do Esporte</span>
+                                <span class="text-xs text-gray-500">Faculdade dos Vales | 2024 - 2025</span>
+                            </li>
+                            <li class="bg-white p-3 rounded spec-item">
+                                <span class="font-semibold block text-gray-700">Saúde Pública</span>
+                                <span class="text-xs text-gray-500">FAMEESP | 2024</span>
+                            </li>
+                            <li class="bg-white p-3 rounded spec-item">
+                                <span class="font-semibold block text-gray-700">Nutrição em Nefrologia</span>
+                                <span class="text-xs text-gray-500">Faculdade Iguaçu | 2023</span>
+                            </li>
+                            <li class="bg-white p-3 rounded spec-item">
+                                <span class="font-semibold block text-gray-700">Nutrição em Oncologia</span>
+                                <span class="text-xs text-gray-500">Faculdade Iguaçu | 2022 - 2023</span>
+                            </li>
+                            <li class="bg-white p-3 rounded spec-item">
+                                <span class="font-semibold block text-gray-700">Nutrição Comportamental</span>
+                                <span class="text-xs text-gray-500">Faculdade Iguaçu | 2022 - 2023</span>
+                            </li>
+                            <li class="bg-white p-3 rounded spec-item">
+                                <span class="font-semibold block text-gray-700">Docência do Ensino Superior em Nutrição</span>
+                                <span class="text-xs text-gray-500">Faculdade Iguaçu | 2022</span>
+                            </li>
+                            <li class="bg-white p-3 rounded spec-item">
+                                <span class="font-semibold block text-gray-700">Nutrição Clínica</span>
+                                <span class="text-xs text-gray-500">FAMEESP | 2021 - 2022</span>
+                            </li>
+                            <li class="bg-white p-3 rounded spec-item">
+                                <span class="font-semibold block text-gray-700">Nutrição na Prática Esportiva</span>
+                                <span class="text-xs text-gray-500">FAMEESP | 2021 - 2022</span>
+                            </li>
+                            <li class="bg-white p-3 rounded spec-item">
+                                <span class="font-semibold block text-gray-700">Fitoterapia e Prescrição de Fitoterápicos</span>
+                                <span class="text-xs text-gray-500">FAMEESP | 2021</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Formação Complementar -->
+                <div class="mt-8 pl-4">
+                    <h3 class="font-bold text-gray-800 text-lg mb-3 flex items-center gap-2">
+                        <i class="fas fa-certificate text-teal-600"></i> Formação Complementar
+                    </h3>
+                    <div class="bg-white border border-gray-200 rounded-lg p-4 max-h-80 overflow-y-auto custom-scrollbar shadow-inner">
+                        <ul class="space-y-2 text-sm text-gray-600">
+                            <!-- 2025 -->
+                            <li><strong>2025:</strong> Estatística e Machine Learning (Vinicius Osterne)</li>
+                            <li><strong>2025:</strong> Python (10h, EDULIV)</li>
+                            <li><strong>2025:</strong> Python análise de dados (15h, Word Aid)</li>
+                            <li><strong>2025:</strong> Power BI (30h, EDULIV)</li>
+                            
+                            <!-- 2024 -->
+                            <li><strong>2024:</strong> SQL - Básico ao Avançado (EDULIV)</li>
+                            <li><strong>2024-2025:</strong> Estatística básica ao avançado (100h, Word Aid)</li>
+                            <li><strong>2024:</strong> Escrita Científica: Produção de Artigos de Alto Impacto (4h, Zuco Escrita)</li>
+                            <li><strong>2024:</strong> Análise Estatística (30h, INSTITUTO PBE)</li>
+                            <li><strong>2024:</strong> ABNT para Trabalhos Acadêmicos (50h, UP CURSOS)</li>
+                            <li><strong>2024:</strong> Estudo transversal (80h, ESCON)</li>
+                            <li><strong>2024:</strong> R BÁSICO PARA INICIANTES (Didática Tech)</li>
+                            <li><strong>2024:</strong> Manipulação de alimentos (16h, SEBRAE/PA)</li>
+                            <li><strong>2024:</strong> Escrita científica aplicada (3h, WORD AID)</li>
+                            <li><strong>2024:</strong> Como buscar evidências científicas nas bases de dados (40h, Fiocruz)</li>
+                            <li><strong>2024:</strong> Noções de Metodologia da Pesquisa Científica (50h, ESCON)</li>
+                            <li><strong>2024:</strong> Revisão sistemática e metanálise (20h, INSTITUTO PBE)</li>
+                            <li><strong>2024:</strong> Conceitos Básicos de Estatística (1h, Albert Einstein)</li>
+                            <li><strong>2024:</strong> PROGRAMAÇÃO E ESTATÍSTICA (4h, WORD AID)</li>
+                            <li><strong>2024:</strong> Prática Baseada em Evidências (1h, Albert Einstein)</li>
+                            <li><strong>2024:</strong> Ética na Pesquisa (1h, Albert Einstein)</li>
+                            <li><strong>2024:</strong> Exercício Físico e Capacidade Muscular (2h, Leonardo Matta)</li>
+                            <li><strong>2024:</strong> Delineamento de Pesquisa (4h, INSTITUTO PBE)</li>
+                            <li><strong>2024:</strong> Ensaio clínico controlado aleatorizado (30h, INSTITUTO PBE)</li>
+                            <li><strong>2024:</strong> Introduction to conducting systematic reviews (1h, Cochrane)</li>
+
+                            <!-- 2023 -->
+                            <li><strong>2023:</strong> Atualização em Nutrição em Saúde mental (40h, INCCOR)</li>
+                            <li><strong>2023:</strong> Avaliação de Desvio Posturais (20h, Treino em foco)</li>
+                            <li><strong>2023:</strong> Anatomia Palpatória (15h, Treino em foco)</li>
+                            <li><strong>2023:</strong> Certificação internacional em psiquiatria nutricional (160h, INCCOR)</li>
+                            <li><strong>2023:</strong> Fitoterapia na saúde mental (20h, INCCOR)</li>
+
+                            <!-- 2021-2020 -->
+                            <li><strong>2021:</strong> Capacitação na política de alimentação e nutrição (32h, SESPA)</li>
+                            <li><strong>2021:</strong> Alimentos Funcionais e Fitoterapia (180h, FAMEESP)</li>
+                            <li><strong>2020:</strong> Alimentação saudável e obesidade (10h, SENAT)</li>
+                            <li><strong>2020:</strong> Planejamento em saúde (30h, Fiocruz MS)</li>
+                            <li><strong>2020:</strong> Promoção do ganho de peso adequado na gestação (30h, UFSC)</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 2. Experiência Profissional -->
+            <section class="hover-section mb-8">
+                <h2 class="section-title">Experiência Profissional</h2>
+                
+                <!-- PMJ -->
+                <div class="mb-8">
+                    <div class="mb-1">
+                        <h3 class="font-bold text-lg text-gray-800">Prefeitura Municipal de Jacareacanga (PMJ)</h3>
+                        <span class="block text-sm text-gray-500 font-semibold mt-1">2021 - 2024 | Nutricionista</span>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed text-justify mt-2">
+                        Atuação como servidor público municipal (nutricionista clínico e coletivo). Responsável pela promoção de alimentação saudável, prevenção e tratamento de condições de saúde em nível hospitalar e ambulatorial (UBS). Integração com equipe técnica da Academia da Saúde, atuando em conjunto com profissionais de educação física.
+                    </p>
+                </div>
+
+                <!-- CEPA -->
+                <div class="mb-6">
+                    <div class="mb-1">
+                        <h3 class="font-bold text-lg text-gray-800">Centro Educacional Pan Americano (CEPA)</h3>
+                        <span class="block text-sm text-gray-500 font-semibold mt-1">2022 - 2024 | Professor Visitante</span>
+                    </div>
+                    <p class="text-gray-600 text-sm mt-2">Docência em disciplinas como Anatomia, Fisiologia Humana, Nutrição e Dietética e Metodologia Científica.</p>
+                </div>
+
+                <!-- Beauth Esthetic -->
+                <div class="mb-6">
+                    <div class="mb-1">
+                        <h3 class="font-bold text-lg text-gray-800">Centro Multiprofissional Beauth Esthetic</h3>
+                        <span class="block text-sm text-gray-500 font-semibold mt-1">2021 - 2024 | Nutricionista Clínico</span>
+                    </div>
+                    <p class="text-gray-600 text-sm mt-2">Atendimento nutricional para crianças, gestantes e adultos.</p>
+                </div>
+            </section>
+
+            <!-- 3. Atuação em Pesquisa Científica -->
+            <section class="hover-section mb-8">
+                <h2 class="section-title">Atuação em Pesquisa Científica</h2>
+                <div class="bg-white rounded-lg p-6 border-l-4 border-slate-900 shadow-sm">
+                    <div class="flex items-start mb-4">
+                        <i class="fas fa-microscope text-2xl text-slate-700 mr-4 mt-1"></i>
+                        <div>
+                            <h3 class="font-bold text-lg text-slate-900">Pesquisador (Mestrando) - UFSC</h3>
+                            <p class="text-slate-600 text-sm">Grupo de estudo e Pesquisa em Exercício Físico & Doenças Crônicas não transmissíveis</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 mb-4 text-sm leading-relaxed text-justify">
+                        Atualmente desenvolvendo pesquisa na área de <strong>exercício físico e doenças crônicas não transmissíveis</strong>, com foco específico na <strong>obesidade grave</strong>. O estudo consiste em uma coorte com acompanhamento de pacientes por três anos, no contexto do processo de cirurgia bariátrica.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-slate-100 text-slate-700 text-xs px-2 py-1 rounded">Obesidade Grave</span>
+                        <span class="bg-slate-100 text-slate-700 text-xs px-2 py-1 rounded">Epidemiologia</span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 4. Produção Técnica (Apps & Sites) -->
+            <section class="hover-section mb-8">
+                <h2 class="section-title">Produção Técnica</h2>
+                <p class="text-sm text-gray-500 mb-6">Ferramentas digitais desenvolvidas para otimizar a prática clínica e a educação em saúde.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                    
+                    <!-- 1. NAF -->
+                    <a href="https://www.nutricaoeducacaofisica.com.br/" target="_blank" class="group bg-white border border-gray-200 rounded-lg p-5 hover:border-teal-500 transition-all hover:shadow-lg flex flex-col justify-between h-full hover:bg-slate-50">
+                        <div>
+                            <div class="text-blue-500 mb-3"><i class="fas fa-book-medical text-2xl"></i></div>
+                            <h3 class="font-bold text-gray-800 mb-1 group-hover:text-teal-600 transition">NAF: Nutrição & Atividade física</h3>
+                            <p class="text-xs text-gray-500">Conteúdo científico aplicado para profissionais que buscam excelência em nutrição e atividade física.</p>
+                        </div>
+                        <div class="mt-4 text-xs font-bold text-teal-600">Acessar <i class="fas fa-arrow-right ml-1"></i></div>
+                    </a>
+
+                    <!-- 2. Observatório -->
+                    <a href="https://romulo-f-monteiro.github.io/Observat-rio-Nacional-OBESIDADE-GRAVE-NO-BRASIL/" target="_blank" class="group bg-white border border-gray-200 rounded-lg p-5 hover:border-teal-500 transition-all hover:shadow-lg flex flex-col justify-between h-full hover:bg-slate-50">
+                        <div>
+                            <div class="text-green-500 mb-3"><i class="fas fa-search-location text-2xl"></i></div>
+                            <h3 class="font-bold text-gray-800 mb-1 group-hover:text-teal-600 transition">Observatório da Obesidade grave</h3>
+                            <p class="text-xs text-gray-500">Monitoramento e dados sobre obesidade grave.</p>
+                        </div>
+                        <div class="mt-4 text-xs font-bold text-teal-600">Acessar <i class="fas fa-arrow-right ml-1"></i></div>
+                    </a>
+
+                    <!-- 3. Calculadora de Dieta -->
+                    <a href="https://romulo-f-monteiro.github.io/dietas-personalizas/" target="_blank" class="group bg-white border border-gray-200 rounded-lg p-5 hover:border-teal-500 transition-all hover:shadow-lg flex flex-col justify-between h-full hover:bg-slate-50">
+                        <div>
+                            <div class="text-orange-500 mb-3"><i class="fas fa-calculator text-2xl"></i></div>
+                            <h3 class="font-bold text-gray-800 mb-1 group-hover:text-teal-600 transition">Dietas Personalizadas</h3>
+                            <p class="text-xs text-gray-500">Para nutricionistas: cálculo de dietas de forma simples.</p>
+                        </div>
+                        <div class="mt-4 text-xs font-bold text-teal-600">Acessar <i class="fas fa-arrow-right ml-1"></i></div>
+                    </a>
+
+                    <!-- 4. Carbo em Dia -->
+                    <a href="https://romuloferreiramonteiro.pythonanywhere.com/" target="_blank" class="group bg-white border border-gray-200 rounded-lg p-5 hover:border-teal-500 transition-all hover:shadow-lg flex flex-col justify-between h-full hover:bg-slate-50">
+                        <div>
+                            <div class="text-purple-500 mb-3"><i class="fas fa-chart-line text-2xl"></i></div>
+                            <h3 class="font-bold text-gray-800 mb-1 group-hover:text-teal-600 transition">Carbo em Dia</h3>
+                            <p class="text-xs text-gray-500">Ferramenta para controle e substituição de carboidratos.</p>
+                        </div>
+                        <div class="mt-4 text-xs font-bold text-teal-600">Acessar <i class="fas fa-arrow-right ml-1"></i></div>
+                    </a>
+
+                    <!-- 5. Gasto Energético -->
+                    <a href="https://romulo-f-monteiro.github.io/gasto-energ-tico-quantas-calorias-eu-gastei-/" target="_blank" class="group bg-white border border-gray-200 rounded-lg p-5 hover:border-teal-500 transition-all hover:shadow-lg flex flex-col justify-between h-full hover:bg-slate-50">
+                        <div>
+                            <div class="text-red-500 mb-3"><i class="fas fa-fire text-2xl"></i></div>
+                            <h3 class="font-bold text-gray-800 mb-1 group-hover:text-teal-600 transition">Gasto Energético</h3>
+                            <p class="text-xs text-gray-500">Estimativa do gasto calórico diário.</p>
+                        </div>
+                        <div class="mt-4 text-xs font-bold text-teal-600">Acessar <i class="fas fa-arrow-right ml-1"></i></div>
+                    </a>
+
+                    <!-- 6. Avaliação Corporal -->
+                    <a href="https://romulo-f-monteiro.github.io/avaliacao-corporal/" target="_blank" class="group bg-white border border-gray-200 rounded-lg p-5 hover:border-teal-500 transition-all hover:shadow-lg flex flex-col justify-between h-full hover:bg-slate-50">
+                        <div>
+                            <div class="text-pink-500 mb-3"><i class="fas fa-ruler-combined text-2xl"></i></div>
+                            <h3 class="font-bold text-gray-800 mb-1 group-hover:text-teal-600 transition">Avaliação Corporal</h3>
+                            <p class="text-xs text-gray-500">Ferramenta completa para avaliação antropométrica.</p>
+                        </div>
+                        <div class="mt-4 text-xs font-bold text-teal-600">Acessar <i class="fas fa-arrow-right ml-1"></i></div>
+                    </a>
+
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- Footer Mobile -->
+    <footer class="text-center p-6 text-gray-500 text-sm">
+        <p>&copy; Todos os direitos reservados. Criado por Rômulo Ferreira Monteiro.</p>
+    </footer>
+
+</body>
+</html>
