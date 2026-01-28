@@ -111,7 +111,7 @@
         .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
         .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
 
-        /* Efeito Texto Brilhante */
+        /* Efeito Texto Brilhante (Para fundo ESCURO - Sidebar) */
         .shiny-text {
             background: linear-gradient(to right, #ffffff 20%, #2dd4bf 50%, #ffffff 80%);
             background-size: 200% auto;
@@ -122,11 +122,22 @@
             animation: shine 3s linear infinite;
             font-weight: 600;
         }
+
+        /* NOVO: Efeito Texto Brilhante (Para fundo CLARO - Títulos Principais) */
+        /* A lógica é a mesma, mas as cores são Cinza Escuro -> Verde Teal -> Cinza Escuro */
+        .shiny-title-dark {
+            background: linear-gradient(to right, #1f2937 20%, #0d9488 50%, #1f2937 80%);
+            background-size: 200% auto;
+            color: #1f2937;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 3s linear infinite;
+        }
+
         @keyframes shine { to { background-position: 200% center; } }
 
-        /* --- NOVO: ANIMAÇÕES PARA MOBILE ADICIONADAS AQUI --- */
-
-        /* 1. Animação de Scroll (Os itens aparecem subindo) */
+        /* Animação de Scroll (Os itens aparecem subindo) */
         .reveal-on-scroll {
             opacity: 0;
             transform: translateY(30px);
@@ -138,8 +149,7 @@
             transform: translateY(0);
         }
 
-        /* 2. Animação de Toque (Feedback tátil para Mobile) 
-           Quando você clica na tela do celular (:active), ele simula o aperto */
+        /* Animação de Toque (Feedback tátil para Mobile) */
         @media (max-width: 768px) {
             .spec-item:active, 
             .group:active,
@@ -150,7 +160,6 @@
                 transition: transform 0.1s;
             }
             
-            /* Remove o hover que "gruda" no mobile e usa o active */
             .hover-section:hover, .spec-item:hover {
                 transform: none; 
                 box-shadow: none;
@@ -240,7 +249,8 @@
 
             <!-- Sobre -->
             <section class="hover-section reveal-on-scroll mb-8">
-                <h2 class="section-title">Perfil Profissional</h2>
+                <!-- Adicionado: shiny-title-dark -->
+                <h2 class="section-title shiny-title-dark">Perfil Profissional</h2>
                 <p class="leading-relaxed text-gray-600 text-justify">
                     Profissional dedicado à pesquisa científica, nutrição, atividade física e ao desenvolvimento tecnológico. Experiência na administração pública em saúde e na prática clínica, com atuação em hospital, posto de saúde, Academia da Saúde e consultório especializado em emagrecimento, com foco no cuidado e manejo de doenças crônicas não transmissíveis, aliando rigor acadêmico, inovação e prática clínica.
                 </p>
@@ -248,7 +258,8 @@
 
             <!-- 1. Formação e Especializações -->
             <section class="hover-section reveal-on-scroll mb-8">
-                <h2 class="section-title">Formação e Especializações</h2>
+                <!-- Adicionado: shiny-title-dark -->
+                <h2 class="section-title shiny-title-dark">Formação e Especializações</h2>
                 <div class="timeline-line">
                     
                     <!-- 1º Licenciatura -->
@@ -373,7 +384,8 @@
 
             <!-- 2. Experiência Profissional -->
             <section class="hover-section reveal-on-scroll mb-8">
-                <h2 class="section-title">Experiência Profissional</h2>
+                <!-- Adicionado: shiny-title-dark -->
+                <h2 class="section-title shiny-title-dark">Experiência Profissional</h2>
                 
                 <!-- PMJ -->
                 <div class="mb-8">
@@ -407,7 +419,8 @@
 
             <!-- 3. Atuação em Pesquisa Científica -->
             <section class="hover-section reveal-on-scroll mb-8">
-                <h2 class="section-title">Atuação em Pesquisa Científica</h2>
+                <!-- Adicionado: shiny-title-dark -->
+                <h2 class="section-title shiny-title-dark">Atuação em Pesquisa Científica</h2>
                 <div class="bg-white rounded-lg p-6 border-l-4 border-slate-900 shadow-sm">
                     <div class="flex items-start mb-4">
                         <i class="fas fa-microscope text-2xl text-slate-700 mr-4 mt-1"></i>
@@ -428,7 +441,8 @@
 
             <!-- 4. Produção Técnica (Apps & Sites) -->
             <section class="hover-section reveal-on-scroll mb-8">
-                <h2 class="section-title">Produção Técnica</h2>
+                <!-- Adicionado: shiny-title-dark -->
+                <h2 class="section-title shiny-title-dark">Produção Técnica</h2>
                 <p class="text-sm text-gray-500 mb-6">Ferramentas digitais desenvolvidas para otimizar a prática clínica e a educação em saúde.</p>
                 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
